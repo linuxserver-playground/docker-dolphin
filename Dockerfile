@@ -1,5 +1,5 @@
 # syntax=docker/dockerfile:1
-FROM ghcr.io/linuxserver/baseimage-selkies:debiantrixie AS dolphin
+FROM ghcr.io/linuxserver-playground/baseimage-selkies:debiantrixie AS dolphin
 
 ARG DOLPHIN_VERSION
 
@@ -49,7 +49,7 @@ RUN \
   make install DESTDIR=/root-out
 
 # runtime stage
-FROM ghcr.io/linuxserver/baseimage-selkies:debiantrixie
+FROM ghcr.io/linuxserver-playground/baseimage-selkies:debiantrixie
 
 # set version label
 ARG BUILD_DATE
