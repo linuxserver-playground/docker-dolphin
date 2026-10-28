@@ -8,9 +8,9 @@ summary: |-
 upstream:
   url: https://dolphin-emu.org/
   version:
-    type: command
-    run: |-
-      curl -sL 'https://raw.githubusercontent.com/flathub/org.DolphinEmu.dolphin-emu/refs/heads/master/org.DolphinEmu.dolphin-emu.metainfo.xml' | awk -F'(<release version="|")' '/release version/ {print $2;exit}'
+    type: regex
+    url: https://raw.githubusercontent.com/flathub/org.DolphinEmu.dolphin-emu/refs/heads/master/org.DolphinEmu.dolphin-emu.metainfo.xml
+    pattern: <release version="([^"]+)"
 
 release:
   branch: master
